@@ -1,0 +1,222 @@
+/* ==========================
+   GOOGLE FONT
+========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap');
+
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:#ffffff;
+
+    color:#0c0c0c;
+
+ font-family: "Courier New", monospace;
+
+    line-height:1.9;
+
+    overflow-x:hidden;
+
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero{
+
+    height:100vh;
+
+    background:
+    linear-gradient(rgba(107, 0, 107, 0.55),
+    rgba(254, 214, 255, 0.55)),
+    url("images/header.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+.hero-content{
+
+    width:90%;
+
+    max-width:900px;
+
+    animation:fade 1.5s;
+
+}
+
+.hero h1{
+
+    font-family: Georgia, serif;
+
+    font-size:70px;
+
+    margin-bottom:20px;
+
+}
+
+.hero p{
+
+    font-size:24px;
+
+    opacity:.9;
+
+    margin-bottom:40px;
+
+}
+
+.btn{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    color:white;
+
+    border:2px solid white;
+
+    padding:18px 45px;
+
+    border-radius:60px;
+
+    transition:.4s;
+
+    font-weight:600;
+
+}
+
+.btn:hover{
+
+    background:white;
+
+    color:#333;
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================
+   ARTICLE
+========================== */
+
+main{
+
+    width:90%;
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:90px 0;
+
+}
+
+section{
+
+    margin-bottom:110px;
+
+}
+
+section h2{
+
+    font-family:"Playfair Display";
+
+    font: size 34px;px;
+
+    color:#3d3d3d;
+
+    margin-bottom:35px;
+
+    position:relative;
+
+}
+
+section h2::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-12px;
+
+    left:0;
+
+    width:90px;
+
+    height:4px;
+
+    border-radius:20px;
+
+    background:#c98fa2;
+
+}
+
+section p{
+
+    margin-bottom:28px;
+
+    font-size:18px;
+
+}
+
+ul{
+
+    margin:35px;
+
+}
+
+li{
+
+    margin-bottom:18px;
+
+    font-size:18px;
+
+}.instagram{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#E1306C;
+    color:white;
+    text-decoration:none;
+
+    padding:16px 35px;
+    border-radius:50px;
+
+    font-weight:600;
+    font-size:18px;
+
+    transition:.3s;
+}
+
+.instagram:hover{
+    background:#c6285c;
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(225,48,108,.35);
+}
