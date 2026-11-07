@@ -215,7 +215,17 @@ li{
     transform:translateY(-3px);
     box-shadow:0 10px 25px rgba(225,48,108,.35);
 }/* EN-TÊTE DE LA PAGE HISTOIRE */
-
+/* Logo Instagram */
+.instagram-logo {
+    width: 23px;
+    height: 23px;
+    display: inline-block;
+    vertical-align: middle;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    margin-right: 10px;
+}
 .header {
     display: flex;
     flex-direction: column;
@@ -1053,4 +1063,1131 @@ footer p:last-child {
     50% {
         transform: translateY(9px);
     }
+}
+/* =================================
+   PAGE COMPRENDRE ET AVANCER
+   MISE EN PAGE HARMONISEE
+================================= */
+
+body:has(.contenu) main.contenu {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 65px 0 90px;
+}
+
+.contenu .article {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* TITRE PRINCIPAL */
+
+.contenu .article h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 36px;
+    line-height: 1.4;
+    color: #a95375;
+    margin: 0 0 30px;
+    font-weight: 700;
+}
+
+/* TITRES DES GRANDES PARTIES */
+
+.contenu .article h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 29px;
+    line-height: 1.45;
+    color: #a95375;
+    margin: 65px 0 30px;
+    position: relative;
+}
+
+/* PETIT SOULIGNEMENT ROSE */
+
+.contenu .article h2::after {
+    content: "";
+    display: block;
+    width: 75px;
+    height: 4px;
+    background: #d18ba5;
+    border-radius: 10px;
+    margin-top: 13px;
+}
+
+/* SOUS-TITRES */
+
+.contenu .article h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    color: #b96884;
+    margin: 38px 0 18px;
+    line-height: 1.5;
+}
+
+/* PARAGRAPHES */
+
+.contenu .article p {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 2;
+    color: #59434b;
+    margin: 0 0 24px;
+}
+
+/* PHRASES IMPORTANTES */
+
+.contenu .article strong {
+    color: #a95375;
+    font-weight: 600;
+}
+
+/* PREMIER TITRE SANS ESPACE EXCESSIF */
+
+.contenu .article h1:first-child {
+    margin-top: 0;
+}
+
+/* VERSION MOBILE */
+
+@media (max-width: 600px) {
+
+    body:has(.contenu) main.contenu {
+        width: 90%;
+        padding: 40px 0 60px;
+    }
+
+    .contenu .article h1 {
+        font-size: 28px;
+    }
+
+    .contenu .article h2 {
+        font-size: 25px;
+        margin-top: 45px;
+    }
+
+    .contenu .article h3 {
+        font-size: 20px;
+        margin-top: 30px;
+    }
+
+    .contenu .article p {
+        font-size: 15px;
+        line-height: 1.9;
+        margin-bottom: 20px;
+    }
+}
+
+/* UNIFORMISER TOUS LES TITRES DE L'ARTICLE */
+
+.contenu .article h1,
+.contenu .article h2,
+.contenu .article h3 {
+    font-family: "Playfair Display", serif !important;
+    color: #b45d7c !important;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* Titre principal */
+.contenu .article h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+/* Titres des parties */
+.contenu .article h2 {
+    font-size: 34px;
+    margin-top: 55px;
+    margin-bottom: 30px;
+}
+
+/* Sous-titres */
+.contenu .article h3 {
+    font-size: 27px;
+    margin-top: 38px;
+    margin-bottom: 20px;
+}
+
+/* Soulignement identique sous les h2 */
+.contenu .article h2::after {
+    content: "";
+    display: block;
+    width: 75px;
+    height: 4px;
+    background: #d18ba5;
+    border-radius: 10px;
+    margin-top: 13px;
+}
+
+@media (max-width: 600px) {
+    .contenu .article h1 {
+        font-size: 29px;
+    }
+
+    .contenu .article h2 {
+        font-size: 27px;
+    }
+
+    .contenu .article h3 {
+        font-size: 23px;
+    }
+}
+
+/* ===== HARMONISATION FINALE DE L'ARTICLE ===== */
+
+.contenu .article {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+/* Tous les titres */
+
+.contenu .article h1,
+.contenu .article h2,
+.contenu .article h3 {
+    font-family: "Playfair Display", serif !important;
+    color: #b45d7c !important;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: left;
+    position: relative;
+}
+
+/* Tailles des titres */
+
+.contenu .article h1 {
+    font-size: 36px;
+    margin: 0 0 30px;
+}
+
+.contenu .article h2 {
+    font-size: 32px;
+    margin: 55px 0 25px;
+}
+
+.contenu .article h3 {
+    font-size: 27px;
+    margin: 38px 0 22px;
+}
+
+/* Même soulignement pour tous les titres */
+
+.contenu .article h1::after,
+.contenu .article h2::after,
+.contenu .article h3::after {
+    content: "";
+    display: block;
+    width: 75px;
+    height: 4px;
+    background: #d18ba5;
+    border-radius: 10px;
+    margin-top: 12px;
+}
+
+/* Alignement uniforme des paragraphes */
+
+.contenu .article p {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 24px;
+    padding: 0;
+    text-align: left;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 2;
+    color: #59434b;
+}
+
+/* Version téléphone */
+
+@media (max-width: 600px) {
+    .contenu .article h1 { font-size: 29px; }
+    .contenu .article h2 { font-size: 27px; }
+    .contenu .article h3 { font-size: 23px; }
+}
+
+/* ======================================
+   NOUVEL ACCUEIL - LA PEUR D'AVOIR PEUR
+====================================== */
+
+.accueil {
+    width: 100%;
+    overflow: hidden;
+    color: #59434b;
+}
+
+/* INTRODUCTION */
+
+.accueil-intro {
+    position: relative;
+    max-width: 1050px;
+    margin: 35px auto 90px;
+    padding: 85px 60px;
+    text-align: center;
+    background: linear-gradient(135deg, #f9dce7, #fff0f5, #f6d2e1);
+    border-radius: 35px;
+    box-shadow: 0 12px 35px rgba(190, 100, 140, .10);
+    animation: arriveeDouce 1s ease;
+}
+
+.petit-titre {
+    display: inline-block;
+    color: #b96884;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.accueil-intro h1 {
+    max-width: 800px;
+    margin: auto auto 25px;
+    font-family: "Playfair Display", serif;
+    font-size: 43px;
+    line-height: 1.35;
+    color: #a95375;
+}
+
+.accueil-intro p {
+    max-width: 680px;
+    margin: 0 auto 30px;
+    font-size: 17px;
+    line-height: 2;
+}
+
+.petite-fleur {
+    position: absolute;
+    right: 45px;
+    bottom: 15px;
+    font-size: 55px;
+    color: #d98eaa;
+    opacity: .65;
+    animation: fleurTourne 8s linear infinite;
+}
+
+/* SECTIONS */
+
+.accueil-section {
+    max-width: 1050px;
+    margin: 0 auto 100px;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    gap: 65px;
+}
+
+.accueil-texte {
+    flex: 1;
+}
+
+.accueil-texte h2,
+.temoignages-accueil h2,
+.accueil-fin h2 {
+    font-family: "Playfair Display", serif;
+    color: #b45d7c;
+    font-size: 34px;
+    line-height: 1.4;
+    margin-bottom: 22px;
+}
+
+.accueil-texte p {
+    font-size: 16px;
+    line-height: 2;
+    margin-bottom: 18px;
+}
+
+/* IMAGES DÉCORATIVES */
+
+.accueil-image {
+    flex: 1;
+    min-height: 330px;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    color: #bd718d;
+    transition: .4s ease;
+}
+
+.accueil-image:hover {
+    transform: translateY(-8px) rotate(-1deg);
+}
+
+.histoire-image {
+    background:
+        radial-gradient(circle at 25% 25%, #fffafd, transparent 35%),
+        linear-gradient(135deg, #f5cbd9, #fce8ef, #eebfd1);
+}
+
+.comprendre-image {
+    background:
+        radial-gradient(circle at 75% 30%, #fffafd, transparent 35%),
+        linear-gradient(135deg, #fce8ef, #efc2d5, #f8dce8);
+}
+
+/* BOUTONS */
+
+.accueil-bouton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 28px;
+    margin-top: 15px;
+    background: linear-gradient(135deg, #d88eae, #bd6687);
+    color: white;
+    text-decoration: none;
+    border-radius: 35px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 6px 18px rgba(189, 102, 135, .18);
+    transition: .3s ease;
+}
+
+.accueil-bouton:hover {
+    transform: translateY(-4px);
+    background: #a95375;
+    box-shadow: 0 10px 22px rgba(189, 102, 135, .25);
+}
+
+/* TÉMOIGNAGES */
+
+.temoignages-accueil {
+    max-width: 1050px;
+    margin: 0 auto 90px;
+    padding: 75px 50px;
+    text-align: center;
+    border-radius: 35px;
+    background: linear-gradient(135deg, #fffafd, #f8dce8);
+    border: 1px solid #f1cbd9;
+    box-shadow: 0 10px 30px rgba(190, 100, 140, .08);
+}
+
+.temoignages-accueil p {
+    max-width: 700px;
+    margin: 0 auto 18px;
+    line-height: 2;
+    font-size: 16px;
+}
+
+.fleurs-decoration {
+    margin-top: 35px;
+    font-size: 30px;
+    color: #d18ba5;
+    letter-spacing: 8px;
+}
+
+/* MOT DE FIN */
+
+.accueil-fin {
+    padding: 75px 25px;
+    text-align: center;
+    background: linear-gradient(135deg, #f6d5e2, #fff0f5);
+}
+
+.accueil-fin p {
+    line-height: 2;
+    margin-bottom: 12px;
+}
+
+/* ANIMATIONS */
+
+@keyframes arriveeDouce {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fleurTourne {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .accueil-intro {
+        margin: 20px 15px 65px;
+        padding: 55px 25px;
+    }
+
+    .accueil-intro h1 {
+        font-size: 31px;
+    }
+
+    .accueil-intro p {
+        font-size: 15px;
+    }
+
+    .accueil-section {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 65px;
+        padding: 0 22px;
+    }
+
+    .accueil-section .accueil-image {
+        width: 100%;
+        min-height: 230px;
+    }
+
+    .accueil-texte h2,
+    .temoignages-accueil h2,
+    .accueil-fin h2 {
+        font-size: 27px;
+    }
+
+    .temoignages-accueil {
+        margin: 0 15px 60px;
+        padding: 50px 22px;
+    }
+
+    .petite-fleur {
+        right: 20px;
+        font-size: 35px;
+    }
+}
+
+/* NAVIGATION ELEGANTE ET EDITORIALE */
+
+.header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    flex-wrap: wrap;
+}
+
+.header nav a {
+    position: relative;
+    background: transparent !important;
+    color: #a65d78 !important;
+    padding: 10px 0 !important;
+    border-radius: 0 !important;
+    text-decoration: none;
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+    font-weight: 700;
+    transition: color .3s ease;
+}
+
+/* Trait animé */
+
+.header nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #d18ba5;
+    transition: all .3s ease;
+    transform: translateX(-50%);
+}
+
+.header nav a:hover {
+    color: #d18ba5 !important;
+    transform: none;
+}
+
+.header nav a:hover::after {
+    width: 100%;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .header nav {
+        gap: 20px;
+    }
+
+    .header nav a {
+        font-size: 15px;
+    }
+}
+
+/* NOUVEAU DESIGN - MON HISTOIRE */
+
+.histoire-intro {
+    max-width: 1050px;
+    margin: 70px auto;
+    padding: 75px 85px;
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(
+        120deg,
+        #fff8fb 0%,
+        #fbe5ed 55%,
+        #f8dce7 100%
+    );
+
+    border-radius: 4px 90px 4px 90px;
+    border: 1px solid #f2cfdd;
+    box-shadow: 0 15px 40px rgba(180, 93, 124, 0.08);
+}
+
+/* Petit détail floral */
+
+.histoire-intro::after {
+    content: "✿";
+    position: absolute;
+    right: 35px;
+    top: 20px;
+    font-size: 75px;
+    color: #e6a6bd;
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+/* Titre */
+
+.histoire-intro h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 38px;
+    color: #b45d7c;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Texte */
+
+.histoire-intro p {
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    line-height: 2;
+    color: #59434b;
+    max-width: 750px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+    .histoire-intro {
+        margin: 35px 18px;
+        padding: 45px 25px;
+        border-radius: 4px 50px 4px 50px;
+    }
+
+    .histoire-intro h2 {
+        font-size: 29px;
+    }
+
+    .histoire-intro p {
+        font-size: 15px;
+    }
+}
+/* Bannière plus chaleureuse */
+.banner {
+    background: linear-gradient(135deg, #f8dce8, #f3c4d7, #f9e6ed);
+    border-radius: 25px;
+    box-shadow: 0 12px 30px rgba(180, 93, 124, 0.12);
+}
+
+/* Titre de la bannière */
+.banner h1 {
+    color: #b45d7c;
+}
+
+/* Fond général de la page */
+body {
+    background: linear-gradient(180deg, #fff3f7 0%, #fce5ed 100%);
+}
+
+/* Navigation */
+.header nav a {
+    color: #a94f70;
+}
+
+.header nav a:hover {
+    color: #d46d96;
+}/* Bouton mode clair / sombre - style Apple */
+#theme-toggle {
+    position: fixed;
+    top: 25px;
+    right: 30px;
+    z-index: 9999;
+
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 27px;
+    cursor: pointer;
+
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 5px 25px rgba(160, 90, 120, 0.18);
+
+    transition: all 0.3s ease;
+}
+
+/* Interrupteur style Apple */
+#theme-toggle {
+    position: fixed;
+    top: 25px;
+    right: 30px;
+    z-index: 9999;
+
+    width: 66px;
+    height: 36px;
+    padding: 3px;
+
+    border: none;
+    border-radius: 30px;
+    background: #e5e5ea;
+
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    transition: background 0.3s ease;
+}
+
+#theme-toggle::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: white;
+
+    box-shadow: 0 2px 5px rgba(0,0,0,0.18);
+    transition: transform 0.3s ease;
+}
+
+/* Quand le mode sombre est activé */
+body.dark-mode #theme-toggle {
+    background: #b45d7c;
+}
+
+body.dark-mode #theme-toggle::before {
+    transform: translateX(30px);
+}
+
+@media (max-width: 600px) {
+    #theme-toggle {
+        top: 15px;
+        right: 15px;
+    }
+}
+@media (max-width: 600px) {
+    #theme-toggle {
+        width: 50px;
+        height: 50px;
+        top: 15px;
+        right: 15px;
+        font-size: 24px;
+    }
+}#theme-toggle {
+    position: fixed;
+    top: 25px;
+    right: 30px;
+    z-index: 9999;
+    width: 66px;
+    height: 36px;
+    border: none;
+    border-radius: 30px;
+    background: #e5e5ea;
+    color: #222;
+    font-size: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 10px;
+}
+/* MODE NUIT */
+
+/* =================================
+   MODE NUIT - LA PEUR D'AVOIR PEUR
+================================= */
+
+
+/* =================================
+   MODE NUIT - TOUTES LES PAGES
+================================= */
+
+body.dark-mode {
+    background: #211923 !important;
+    color: #f3e5ec !important;
+    transition: background .3s ease, color .3s ease;
+}
+
+/* En-têtes et navigation */
+body.dark-mode .header {
+    background: #211923 !important;
+    border-color: #493447 !important;
+}
+
+body.dark-mode .header nav a {
+    color: #e8a8c0 !important;
+}
+
+/* Accueil */
+body.dark-mode .accueil {
+    color: #f3e5ec !important;
+}
+
+body.dark-mode .accueil-intro,
+body.dark-mode .accueil-fin,
+body.dark-mode .temoignages-accueil {
+    background: linear-gradient(135deg, #392a3a, #302331) !important;
+    border-color: #60465b !important;
+}
+
+body.dark-mode .accueil-image {
+    background: linear-gradient(135deg, #493348, #352638) !important;
+    color: #e8a8c0 !important;
+}
+
+/* Page Mon histoire */
+body.dark-mode .introduction,
+body.dark-mode .histoire-intro,
+body.dark-mode article.temoignage,
+body.dark-mode .temoignage section {
+    background: #352738 !important;
+    color: #f3e5ec !important;
+    border-color: #60465b !important;
+}
+
+/* Page Comprendre et avancer */
+body.dark-mode .page-intro,
+body.dark-mode .avertissement,
+body.dark-mode .rubrique,
+body.dark-mode .ressources-payantes {
+    background: #352738 !important;
+    color: #f3e5ec !important;
+    border-color: #60465b !important;
+}
+
+/* Article : pas de gros encadré inutile */
+body.dark-mode .contenu .article {
+    background: transparent !important;
+    color: #f3e5ec !important;
+}
+
+/* Page témoignages */
+body.dark-mode .publication-form,
+body.dark-mode .fil-actualite,
+body.dark-mode #liste-temoignages .post,
+body.dark-mode .post,
+body.dark-mode .commentaire,
+body.dark-mode .zone-commentaires p {
+    background: #352738 !important;
+    color: #f3e5ec !important;
+    border-color: #60465b !important;
+}
+
+/* Champs de saisie */
+body.dark-mode input,
+body.dark-mode textarea {
+    background: #281e2c !important;
+    color: #f8eaf0 !important;
+    border-color: #74546a !important;
+}
+
+/* Tous les textes */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4 {
+    color: #e9a5bf !important;
+}
+
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode blockquote,
+body.dark-mode label,
+body.dark-mode strong {
+    color: #f3e5ec !important;
+}
+
+/* Liens et boutons */
+body.dark-mode a {
+    color: #e9a5bf;
+}
+
+body.dark-mode button {
+    color: #f8eaf0;
+}
+
+/* Citations */
+body.dark-mode blockquote {
+    background: #493348 !important;
+    border-color: #d18ba5 !important;
+}
+
+/* Pied de page */
+body.dark-mode footer {
+    background: #19131d !important;
+    color: #f3e5ec !important;
+}
+
+body.dark-mode footer p {
+    color: #e9a5bf !important;
+}
+
+/* Interrupteur */
+body.dark-mode #theme-toggle {
+    background: #e5e5ea;
+    color: #222;
+}
+/* Correction des derniers blocs en mode nuit */
+
+body.dark-mode .contact-instagram {
+    background: #352738 !important;
+    border: 1px solid #60465b !important;
+    color: #f3e5ec !important;
+}
+
+body.dark-mode .contact-instagram h2,
+body.dark-mode .contact-instagram p {
+    color: #f3e5ec !important;
+}
+
+body.dark-mode .contact-instagram a {
+    background: #bd718f !important;
+    color: white !important;
+}
+
+/* Page Mon histoire */
+body.dark-mode .histoire-intro,
+body.dark-mode .histoire-intro h2,
+body.dark-mode .histoire-intro p,
+body.dark-mode article.temoignage,
+body.dark-mode article.temoignage h2,
+body.dark-mode article.temoignage p {
+    background-color: #352738 !important;
+    color: #f3e5ec !important;
+}body.dark-mode .instagram {
+    background: #493348 !important;
+    color: #f3e5ec !important;
+    border-color: #d18ba5 !important;
+}/* ADAPTATION TELEPHONE */
+@media (max-width: 600px) {
+
+    .banner {
+        width: 94%;
+        margin: 15px auto;
+    }
+
+    .header nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 18px;
+        padding: 15px;
+    }
+
+    .header nav a {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    main {
+        width: 92%;
+        padding: 35px 0;
+    }
+
+    .accueil-section,
+    .accueil-intro,
+    .accueil-fin,
+    .histoire-intro,
+    .article,
+    .temoignage {
+        width: 100%;
+        padding: 25px 20px;
+        margin: 25px auto;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    p {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    #theme-toggle {
+        top: 12px;
+        right: 12px;
+    }
+}/* Texture autour de la bannière */
+.banner {
+    position: relative;
+    isolation: isolate;
+    box-shadow:
+        0 15px 35px rgba(180, 93, 124, 0.13),
+        0 0 50px rgba(230, 166, 189, 0.12);
+}
+
+/* Texture florale - MODE JOUR */
+.header {
+    background:
+        radial-gradient(circle at 8% 15%, rgba(239, 173, 196, 0.35), transparent 25%),
+        radial-gradient(circle at 90% 80%, rgba(244, 190, 210, 0.4), transparent 30%),
+        radial-gradient(circle at 50% 50%, rgba(255, 230, 239, 0.7), transparent 65%),
+        #fff5f9;
+
+    border-bottom: 1px solid #f1d6e1;
+}
+
+/* Texture florale - MODE NUIT */
+body.dark-mode .header {
+    background:
+        radial-gradient(circle at 8% 15%, rgba(126, 76, 105, 0.25), transparent 25%),
+        radial-gradient(circle at 90% 80%, rgba(94, 58, 83, 0.3), transparent 30%),
+        #211923 !important;
+
+    border-color: #493447 !important;
+}/* Bloc communauté : coins arrondis et ombre */
+.accueil-fin {
+    border-radius: 28px !important;
+    box-shadow: 0 15px 40px rgba(180, 93, 124, 0.15);
+    border: 1px solid rgba(219, 160, 184, 0.25);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.accueil-fin:hover {
+    box-shadow: 0 20px 45px rgba(180, 93, 124, 0.22);
+}
+
+/* Mode nuit */
+body.dark-mode .accueil-fin {
+    border-color: #60465b !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}.instagram {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.instagram-logo {
+    width: 21px;
+    height: 21px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+}.contact .instagram {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact .instagram-logo {
+    display: block;
+    width: 23px;
+    height: 23px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    flex-shrink: 0;
+}/* Bloc contact indépendant */
+.contact {
+    max-width: 850px;
+    margin: 70px auto !important;
+    padding: 55px 45px !important;
+    box-sizing: border-box;
+    text-align: center;
+    background: linear-gradient(135deg, #fce8ef, #f7d9e5);
+    border: 1px solid #edc5d5;
+    border-radius: 28px;
+    box-shadow: 0 15px 40px rgba(180, 93, 124, 0.15);
+}
+
+/* Titre */
+.contact h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Petit trait sous le titre */
+.contact h2::after {
+    margin: 15px auto 0;
+}
+
+/* Texte */
+.contact p {
+    max-width: 650px;
+    margin: 0 auto 30px !important;
+    text-align: center;
+    line-height: 1.9;
+}
+
+/* Bouton Instagram */
+/* Petit bloc contact */
+.contact {
+    max-width: 650px;
+    margin: 45px auto !important;
+    padding: 30px 35px !important;
+    box-sizing: border-box;
+    text-align: center;
+    background: linear-gradient(135deg, #fce8ef, #f7d9e5);
+    border: 1px solid #edc5d5;
+    border-radius: 22px;
+    box-shadow: 0 8px 22px rgba(180, 93, 124, 0.12);
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 27px;
+    margin-bottom: 18px;
+}
+
+.contact h2::after {
+    margin: 12px auto 0;
+}
+
+.contact p {
+    max-width: 520px;
+    margin: 0 auto 20px !important;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.contact .instagram {
+    margin: 0 auto;
+    padding: 12px 22px;
+    font-size: 15px;
+}
+
+body.dark-mode .contact {
+    background: #493348 !important;
+    border-color: #684b60 !important;
 }
