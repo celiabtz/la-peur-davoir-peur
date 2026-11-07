@@ -1,0 +1,453 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mon questionnaire | La peur d'avoir peur</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fbf5f6;
+  color: #55444c;
+  min-height: 100vh;
+}
+
+header {
+  padding: 25px 20px;
+  text-align: center;
+}
+
+header a {
+  color: #a66e86;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: #9c657e;
+}
+
+.container {
+  max-width: 680px;
+  margin: 35px auto;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 22px;
+  padding: 40px 30px;
+  box-shadow: 0 10px 35px rgba(155, 105, 126, 0.08);
+  text-align: center;
+}
+
+.flower {
+  font-size: 38px;
+  margin-bottom: 18px;
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  color: #a66e86;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 34px;
+  margin-bottom: 15px;
+}
+
+.intro {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #83747b;
+  margin-bottom: 25px;
+}
+
+.info {
+  background: #fbf2f5;
+  padding: 18px;
+  border-radius: 14px;
+  font-size: 13px;
+  line-height: 2;
+  margin-bottom: 25px;
+}
+
+button {
+  border: none;
+  background: #c78da6;
+  color: white;
+  padding: 15px 28px;
+  border-radius: 30px;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #ad718d;
+  transform: translateY(-2px);
+}
+
+.progress {
+  height: 6px;
+  background: #f1e4e9;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: #c78da6;
+  transition: 0.3s;
+}
+
+.counter {
+  font-size: 12px;
+  color: #a18b95;
+  margin-bottom: 15px;
+}
+
+.question {
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+
+.answers {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.answer {
+  background: #fff9fb;
+  border: 1px solid #efdce4;
+  border-radius: 13px;
+  padding: 16px;
+  color: #715866;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.answer:hover {
+  border-color: #c78da6;
+}
+
+.answer.selected {
+  background: #f4e3eb;
+  border: 2px solid #c78da6;
+  color: #87516c;
+}
+
+.hidden {
+  display: none;
+}
+
+.note {
+  font-size: 11px;
+  color: #a18b95;
+  line-height: 1.8;
+  margin-top: 20px;
+}
+
+@media(max-width: 500px) {
+  .card {
+    padding: 30px 20px;
+  }
+  h1 {
+    font-size: 28px;
+  }
+  .question {
+    font-size: 22px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">La peur d'avoir peur</div>
+  <a href="index.html">← Retour à l'accueil</a>
+</header>
+
+<main class="container">
+
+<section class="card" id="welcome">
+  <div class="flower">🌸</div>
+  <h1>Et si tu prenais un instant pour toi ?</h1>
+
+  <p class="intro">
+    Un petit moment pour comprendre ce que tu traverses,
+    sans jugement et à ton rythme.
+  </p>
+
+  <div class="info">
+    ♡ 12 questions<br>
+    ♡ Environ 3 minutes<br>
+    ♡ Un bilan personnel à la fin
+  </div>
+
+  <p class="intro">
+    Il n'existe aucune mauvaise réponse.
+    Réponds simplement avec sincérité.
+  </p>
+
+  <button onclick="startQuiz()">Commencer mon questionnaire ♡</button>
+
+  <p class="note">
+    Ce questionnaire est un outil de réflexion personnelle.
+    Il ne constitue pas un diagnostic médical.
+  </p>
+</section>
+
+<section class="card hidden" id="quiz">
+
+  <div class="flower">🌷</div>
+
+  <div class="counter" id="counter"></div>
+
+  <div class="progress">
+    <div class="progress-bar" id="progress"></div>
+  </div>
+
+  <h2 class="question" id="question"></h2>
+
+  <div class="answers" id="answers"></div>
+
+  <button id="next" onclick="nextQuestion()" disabled>
+    Question suivante →
+  </button>
+
+  <p class="note">Prends ton temps. Tu peux répondre à ton rythme ♡</p>
+
+</section>
+
+<section class="card hidden" id="result">
+  <div class="flower">🌸</div>
+  <h1>Ton bilan personnel</h1>
+  <p class="intro" id="resultText"></p>
+  <div id="details"></div>
+</section>
+
+</main>
+
+<script>
+const questions = [
+  {
+    category: "crises",
+    text: "À quelle fréquence ressens-tu des montées d'angoisse ou des crises qui te semblent difficiles à contrôler ?"
+  },
+  {
+    category: "crises",
+    text: "À quelle fréquence ressens-tu des symptômes physiques associés à ton anxiété ?"
+  },
+  {
+    category: "crises",
+    text: "Lorsque tu traverses une crise, à quelle fréquence as-tu du mal à retrouver ton calme ?"
+  },
+  {
+    category: "peur",
+    text: "À quelle fréquence as-tu peur qu'une nouvelle crise survienne ?"
+  },
+  {
+    category: "peur",
+    text: "À quelle fréquence surveilles-tu tes sensations physiques par peur qu'elles annoncent une crise ?"
+  },
+  {
+    category: "peur",
+    text: "À quelle fréquence anticipes-tu négativement une situation par peur de ressentir de l'angoisse ?"
+  },
+  {
+    category: "quotidien",
+    text: "À quelle fréquence évites-tu certains lieux ou certaines activités par peur de faire une crise ?"
+  },
+  {
+    category: "quotidien",
+    text: "À quelle fréquence ressens-tu le besoin d'être accompagnée ou rassurée pour sortir ?"
+  },
+  {
+    category: "quotidien",
+    text: "À quelle fréquence as-tu envie de quitter une situation parce que tu crains de faire une crise ?"
+  },
+  {
+    category: "equilibre",
+    text: "À quelle fréquence ton anxiété perturbe-t-elle ton sommeil ?"
+  },
+  {
+    category: "equilibre",
+    text: "À quelle fréquence ton anxiété complique-t-elle tes relations ou tes activités habituelles ?"
+  },
+  {
+    category: "equilibre",
+    text: "À quelle fréquence as-tu l'impression que ton anxiété prend trop de place dans ta vie ?"
+  }
+];
+
+const choices = [
+  { label: "Jamais", value: 0 },
+  { label: "Rarement", value: 1 },
+  { label: "Parfois", value: 2 },
+  { label: "Souvent", value: 3 }
+];
+
+let current = 0;
+let selected = null;
+let responses = [];
+
+function startQuiz() {
+  document.getElementById("welcome").classList.add("hidden");
+  document.getElementById("quiz").classList.remove("hidden");
+  showQuestion();
+}
+
+function showQuestion() {
+  selected = null;
+
+  const q = questions[current];
+
+  document.getElementById("counter").textContent =
+    "QUESTION " + (current + 1) + " SUR 12";
+
+  document.getElementById("progress").style.width =
+    ((current + 1) / 12 * 100) + "%";
+
+  document.getElementById("question").textContent = q.text;
+
+  document.getElementById("next").disabled = true;
+
+  document.getElementById("next").textContent =
+    current === 11 ? "Voir mon bilan ♡" : "Question suivante →";
+
+  const answers = document.getElementById("answers");
+  answers.innerHTML = "";
+
+  choices.forEach(choice => {
+    const button = document.createElement("button");
+    button.className = "answer";
+    button.textContent = choice.label;
+
+    button.onclick = () => {
+      selected = choice.value;
+
+      document.querySelectorAll(".answer").forEach(el => {
+        el.classList.remove("selected");
+      });
+
+      button.classList.add("selected");
+      document.getElementById("next").disabled = false;
+    };
+
+    answers.appendChild(button);
+  });
+}
+
+function nextQuestion() {
+  if (selected === null) return;
+
+  responses[current] = selected;
+  current++;
+
+  if (current < questions.length) {
+    showQuestion();
+  } else {
+    showResult();
+  }
+}
+
+function showResult() {
+  document.getElementById("quiz").classList.add("hidden");
+  document.getElementById("result").classList.remove("hidden");
+
+  const scores = {
+    crises: 0,
+    peur: 0,
+    quotidien: 0,
+    equilibre: 0
+  };
+
+  questions.forEach((q, i) => {
+    scores[q.category] += responses[i];
+  });
+
+  const profiles = {
+    crises: {
+      title: "Comprendre tes crises",
+      description: "Mieux comprendre tes sensations et tes épisodes d'angoisse."
+    },
+    peur: {
+      title: "Apprivoiser la peur",
+      description: "Prendre du recul sur l'appréhension et la peur de refaire une crise."
+    },
+    quotidien: {
+      title: "Retrouver ta liberté",
+      description: "Retrouver progressivement de l'aisance dans tes activités."
+    },
+    equilibre: {
+      title: "Retrouver ton équilibre",
+      description: "Mieux comprendre l'impact de l'anxiété sur ton quotidien."
+    }
+  };
+
+  const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+
+  const highest = sorted[0][1];
+  const selectedProfiles = sorted.filter(item => item[1] === highest);
+
+  document.getElementById("resultText").textContent =
+    highest <= 2
+    ? "Tes réponses font ressortir peu de difficultés fréquentes dans les domaines explorés. Tu peux continuer à prendre soin de toi et découvrir nos ressources gratuites."
+    : "Merci d'avoir pris ce moment pour toi. Tes réponses font ressortir certains domaines dans lesquels tu pourrais avoir besoin de soutien. Voici tes pistes personnalisées.";
+
+  const details = document.getElementById("details");
+
+  details.innerHTML = "";
+
+  selectedProfiles.forEach(([key, score]) => {
+    const profile = profiles[key];
+
+    const box = document.createElement("div");
+    box.className = "info";
+
+    const title = document.createElement("h2");
+    title.textContent = profile.title;
+
+    const description = document.createElement("p");
+    description.textContent = profile.description;
+
+    const scoreText = document.createElement("p");
+    scoreText.textContent = "Score indicatif : " + score + "/9";
+
+    box.append(title, description, scoreText);
+    details.appendChild(box);
+  });
+
+  const restart = document.createElement("button");
+  restart.textContent = "Recommencer";
+  restart.onclick = () => location.reload();
+
+  details.appendChild(restart);
+}
+</script>
+
+</body>
+</html>
