@@ -372,7 +372,16 @@ const choices = [
 let current = 0;
 let selected = null;
 let responses = [];
+function toggleTheme() {
+  const body = document.body;
+  const button = document.getElementById("themeButton");
 
+  body.classList.toggle("dark-mode");
+
+  const isDark = body.classList.contains("dark-mode");
+
+  button.textContent = isDark ? "🌙 Mode nuit" : "☀️ Mode jour";
+}
 function startQuiz() {
   document.getElementById("welcome").classList.add("hidden");
   document.getElementById("quiz").classList.remove("hidden");
