@@ -1869,7 +1869,6 @@ body.dark-mode .accueil-image {
 /* Page Mon histoire */
 body.dark-mode .introduction,
 body.dark-mode .histoire-intro,
-body.dark-mode article.temoignage,
 body.dark-mode .temoignage section {
     background: #352738 !important;
     color: #f3e5ec !important;
@@ -1977,14 +1976,34 @@ body.dark-mode .contact-instagram a {
 }
 
 /* Page Mon histoire */
-body.dark-mode .histoire-intro,
-body.dark-mode .histoire-intro h2,
-body.dark-mode .histoire-intro p,
-body.dark-mode article.temoignage,
-body.dark-mode article.temoignage h2,
-body.dark-mode article.temoignage p {
-    background-color: #352738 !important;
+/* Page Mon histoire */
+body.dark-mode .histoire-intro {
+    background: #352738 !important;
     color: #f3e5ec !important;
+}
+
+body.dark-mode article.temoignage {
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+body.dark-mode article.temoignage section {
+    background: #352738 !important;
+    border: 1px solid #60465b !important;
+    border-radius: 22px !important;
+    box-shadow: none !important;
+    margin: 0 0 30px 0 !important;
+    padding: 35px !important;
+}
+
+body.dark-mode article.temoignage h2,
+body.dark-mode article.temoignage p,
+body.dark-mode article.temoignage li {
+    color: #f3e5ec !important;
+}
 }body.dark-mode .instagram {
     background: #493348 !important;
     color: #f3e5ec !important;
@@ -2190,4 +2209,52 @@ body.dark-mode .accueil-fin {
 body.dark-mode .contact {
     background: #493348 !important;
     border-color: #684b60 !important;
+}/* Supprimer la bande entre les sections de Mon histoire */
+body.dark-mode article.temoignage {
+    background: transparent !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+}
+
+body.dark-mode article.temoignage section {
+    background: #352738 !important;
+    margin-bottom: 30px !important;
+    border-radius: 22px;
+    border: 1px solid #60465b;
+    box-shadow: none !important;
+outline: none !important;
+}body.dark-mode main,
+body.dark-mode article.temoignage {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+body.dark-mode article.temoignage section {
+    margin-bottom: 25px !important;
+}body.dark-mode article.temoignage::before,
+body.dark-mode article.temoignage::after {
+    display: none !important;
+    content: none !important;
+}
+
+body.dark-mode article.temoignage {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding-bottom: 0 !important;
+}
+
+body.dark-mode article.temoignage section {
+    margin-bottom: 20px !important;
+}/* CORRECTION ESPACEMENT ENTRE LES BULLES DE MON HISTOIRE */
+.temoignage section {
+    margin-bottom: 25px !important;
+}
+
+/* Supprimer le fond visible entre les bulles */
+.temoignage {
+    background: transparent !important;
+    padding: 0 !important;
+    box-shadow: none !important;
 }
