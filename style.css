@@ -1,115 +1,128 @@
-/* Navigation */
-.navigation-site {
-    width: min(96%, 1100px);
-    margin: 10px auto 20px;
-    padding: 5px 10px;
-    display: flex;
+    color: #fff !important;
+
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 9px !important;
+    line-height: 1.2 !important;
+
+    display: inline-flex !important;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 5px;
-    box-sizing: border-box;
-}
 
-/* Bannière */
-.header .banner {
-    position: relative;
-    display: flex;
+    cursor: pointer;
+}/* Carnet : bouton de thème dans la navigation */
+.navigation-site #theme-toggle {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    min-width: 0 !important;
+    padding: 4px 7px !important;
+    margin: 0 0 0 5px !important;
+    border: 1px solid #bd6687 !important;
+    border-radius: 15px !important;
+    background: #bd6687 !important;
+    color: white !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 9px !important;
+    line-height: 1.2 !important;
+    display: inline-flex !important;
     align-items: center;
     justify-content: center;
-    width: min(90%, 1100px);
-    min-height: 190px;
-    margin: 25px auto 0;
-    overflow: hidden;
-    box-sizing: border-box;
-}
-
-.header .banner-content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
+}/* Boutons de fin du carnet */
+.carnet-finish {
     text-align: center;
+    margin: 35px auto;
+    padding: 25px;
+    background: #f9eaf0;
+    border-radius: 18px;
 }
 
-.header .banner-flower {
-    position: absolute;
-    z-index: 1;
-    pointer-events: none;
+.carnet-finish p {
+    color: #70465c;
+    line-height: 1.7;
 }
 
-/* Lisibilité des compteurs et commentaires en mode jour */
-body:not(.dark-mode) .post-actions span,
-body:not(.dark-mode) .zone-commentaires,
-body:not(.dark-mode) .compteur-commentaires {
-    color: #765365 !important;
+#terminerCarnetBtn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 30px;
+    background: #bd6687;
+    color: white;
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-body:not(.dark-mode) .lien-commentaires {
-    color: #a85e7c !important;
+#terminerCarnetBtn:hover {
+    background: #a94f73;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px #bd668755;
+    
+}
+#telechargerPDF {
+    display: inline-block;
+    margin: 15px 8px;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 30px;
+    background: #bd6687;
+    color: white;
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-/* Contraste en mode nuit */
-body.dark-mode .post-actions span,
-body.dark-mode .zone-commentaires,
-body.dark-mode .compteur-commentaires {
-    color: #f3e5ec !important;
+#telechargerPDF:hover {
+    background: #a94f73;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px #bd668755;
 }
 
-body.dark-mode .lien-commentaires {
-    color: #f1b7ce !important;
+#telechargerPDF[hidden] {
+    display: none;
 }
 
-@media (max-width: 600px) {
-    .header {
-        padding: 18px 10px;
-        gap: 14px;
-    }
-
-    .header .banner {
-        width: 96%;
-        min-height: 170px;
-        margin-top: 10px;
-        border-radius: 20px;
-    }
-
-    .header .banner-content {
-        padding: 18px 12px;
-    }
-
-    .header .banner-content h1 {
-        font-size: clamp(23px, 7vw, 30px);
-        line-height: 1.25;
-    }
-
-    .header .banner-content p {
-        font-size: 11px;
-        line-height: 1.6;
-    }
-
-    .header .banner-signature {
-        font-size: 8px;
-        letter-spacing: 2px;
-    }
-
-    .navigation-site {
-        width: 100%;
-        gap: 3px;
-        padding: 5px 2px;
-    }
-
-    .navigation-site a {
-        gap: 5px;
-        padding: 8px 7px;
-        font-size: 12px;
-    }
-
-    .navigation-site svg,
-    .navigation-site a svg,
-    .header nav svg {
-        width: 16px !important;
-        height: 16px !important;
-        max-width: 16px !important;
-        max-height: 16px !important;
-        flex-basis: 16px !important;
-    }
+#terminerCarnetBtn:disabled {
+    opacity: 0.7;
+    cursor: default;
+    transform: none;
 }
+
+body.dark-mode .carnet-finish {
+    background: #493348;
+}
+
+body.dark-mode .carnet-finish p {
+    color: #f3e5ec;
+}
+/* ===== CORRECTION VISIBILITÉ COMMENTAIRES ===== */
+
+.comment-actions button,
+.like-btn,
+.report-btn,
+.comment-btn {
+    background: #f7dce8 !important;
+    color: #493447 !important;
+    opacity: 1 !important;
+}
+
+.comment-actions button *,
+.like-btn *,
+.report-btn *,
+.comment-btn * {
+    color: #493447 !important;
+    opacity: 1 !important;
+}
+
+.comment-count,
+.comments-title,
+.comment-count span {
+    color: #ffffff !important;
+}
+
+.view-comments,
