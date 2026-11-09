@@ -1,67 +1,3 @@
-    color: #fff !important;
-
-    font-family: 'Poppins', sans-serif !important;
-    font-size: 9px !important;
-    line-height: 1.2 !important;
-
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-
-    cursor: pointer;
-}/* Carnet : bouton de thème dans la navigation */
-.navigation-site #theme-toggle {
-    position: static !important;
-    width: auto !important;
-    height: auto !important;
-    min-width: 0 !important;
-    padding: 4px 7px !important;
-    margin: 0 0 0 5px !important;
-    border: 1px solid #bd6687 !important;
-    border-radius: 15px !important;
-    background: #bd6687 !important;
-    color: white !important;
-    font-family: 'Poppins', sans-serif !important;
-    font-size: 9px !important;
-    line-height: 1.2 !important;
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-}/* Boutons de fin du carnet */
-.carnet-finish {
-    text-align: center;
-    margin: 35px auto;
-    padding: 25px;
-    background: #f9eaf0;
-    border-radius: 18px;
-}
-
-.carnet-finish p {
-    color: #70465c;
-    line-height: 1.7;
-}
-
-#terminerCarnetBtn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 14px 28px;
-    border: none;
-    border-radius: 30px;
-    background: #bd6687;
-    color: white;
-    font-family: Poppins, sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-#terminerCarnetBtn:hover {
-    background: #a94f73;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px #bd668755;
-    
-}
 #telechargerPDF {
     display: inline-block;
     margin: 15px 8px;
@@ -100,29 +36,84 @@ body.dark-mode .carnet-finish {
 body.dark-mode .carnet-finish p {
     color: #f3e5ec;
 }
-/* ===== CORRECTION VISIBILITÉ COMMENTAIRES ===== */
 
-.comment-actions button,
-.like-btn,
-.report-btn,
-.comment-btn {
-    background: #f7dce8 !important;
+/* ===== COMMENTAIRES : CONTRASTE CORRIGÉ ===== */
+
+/* Boutons J'aime et Signaler */
+body.dark-mode .post-actions button {
+    background: #F7DCE8 !important;
+    color: #493447 !important;
+    opacity: 1 !important;
+    border: none !important;
+}
+
+body.dark-mode .post-actions button * {
     color: #493447 !important;
     opacity: 1 !important;
 }
 
-.comment-actions button *,
-.like-btn *,
-.report-btn *,
-.comment-btn * {
+/* Compteur et textes des commentaires */
+body.dark-mode .compteur-commentaires,
+body.dark-mode .zone-commentaires,
+body.dark-mode .zone-commentaires p,
+body.dark-mode .commentaire,
+body.dark-mode .commentaire p,
+body.dark-mode .commentaire strong {
+    color: #F3E5EC !important;
+}
+
+/* Lien Voir les commentaires */
+body.dark-mode .zone-commentaires a,
+body.dark-mode .zone-commentaires .lien-commentaires,
+body.dark-mode .lien-commentaires {
+    color: #F7C5DC !important;
+    opacity: 1 !important;
+}
+
+/* Bouton Écrire un commentaire et actions */
+body.dark-mode .zone-commentaires button:not(.lien-commentaires),
+body.dark-mode #boutonEcrire {
+    background: #F7DCE8 !important;
     color: #493447 !important;
     opacity: 1 !important;
 }
 
-.comment-count,
-.comments-title,
-.comment-count span {
-    color: #ffffff !important;
+body.dark-mode .zone-commentaires button:not(.lien-commentaires) *,
+body.dark-mode #boutonEcrire * {
+    color: #493447 !important;
 }
 
-.view-comments,
+
+/* ===== RESTAURATION / COMPATIBILITE AVEC L'ACCUEIL ACTUEL ===== */
+:root { color-scheme: light; }
+body {
+  margin: 0;
+  background: linear-gradient(180deg,#fff8fb 0%,#fceaf1 100%);
+  color: #59434b;
+  font-family: 'Poppins',sans-serif;
+}
+.header { width:100%; display:flex; flex-direction:column; align-items:center; gap:22px; padding:24px 18px; box-sizing:border-box; background:rgba(255,250,253,.94); }
+.navigation-site { width:min(96%,1100px); display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:12px 28px; margin:0 auto; }
+.navigation-site a { color:#a65d78; text-decoration:none; font-family:'Poppins',sans-serif; font-size:14px; font-weight:500; padding:9px 12px; border-radius:24px; transition:.2s ease; }
+.navigation-site a:hover { color:#fff; background:#bd718f; }
+.banner { width:min(92%,1100px); min-height:180px; margin:22px auto; border-radius:24px; background:linear-gradient(120deg,#49303f,#382333,#49303f) !important; box-shadow:0 12px 30px rgba(80,40,60,.14); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+.banner h1,.banner-content h1 { color:#f5b7cc; font-family:'Playfair Display',serif; }
+main { width:min(92%,1000px); margin:0 auto; padding:45px 0 70px; }
+.accueil { width:100%; }
+.accueil-intro,.temoignages-accueil,.accueil-fin { color:#59434b; }
+.accueil-intro { max-width:950px; margin:25px auto 65px; padding:65px 35px; border-radius:28px; background:linear-gradient(135deg,#f9dce7,#fff0f5,#f6d2e1); box-shadow:0 12px 35px rgba(190,100,140,.10); text-align:center; }
+.accueil-intro h1 { color:#a95375; font:700 clamp(30px,5vw,44px)/1.35 'Playfair Display',serif; }
+.accueil-intro p,.accueil-texte p,.temoignages-accueil p { color:#59434b; line-height:2; }
+.accueil-section { max-width:950px; margin:0 auto 75px; padding:0 18px; display:flex; align-items:center; gap:40px; }
+.accueil-texte { flex:1; }
+.accueil-texte h2,.temoignages-accueil h2,.accueil-fin h2 { color:#a95375; font-family:'Playfair Display',serif; }
+.accueil-image { flex:1; min-height:250px; border-radius:28px; background:linear-gradient(135deg,#f5cbd9,#fce8ef,#eebfd1); display:grid; place-items:center; color:#bd718d; font-size:80px; }
+.accueil-bouton,.bouton-histoire,.bouton-communaute { display:inline-block; background:linear-gradient(135deg,#d88eae,#bd6687); color:white !important; padding:13px 24px; border-radius:28px; text-decoration:none; border:0; }
+.temoignages-accueil { max-width:900px; margin:0 auto 65px; padding:50px 30px; border-radius:28px; text-align:center; background:#fffafd; border:1px solid #f1cbd9; }
+footer { text-align:center; color:#98768a; padding:28px 18px; }
+body.dark-mode { background:#211923 !important; color:#f3e5ec !important; }
+body.dark-mode .header, body.dark-mode .publication-form, body.dark-mode .fil-actualite, body.dark-mode #liste-temoignages .post, body.dark-mode .communaute .post { background:#302431 !important; color:#f3e5ec !important; border-color:#60465b !important; }
+body.dark-mode .navigation-site a, body.dark-mode main p, body.dark-mode main li, body.dark-mode .accueil-texte p { color:#f3e5ec !important; }
+body.dark-mode .accueil-intro, body.dark-mode .temoignages-accueil, body.dark-mode .accueil-fin { background:linear-gradient(135deg,#392a3a,#302331) !important; color:#f3e5ec !important; }
+body.dark-mode h1,body.dark-mode h2,body.dark-mode h3 { color:#e9a5bf !important; }
+@media(max-width:700px){ .accueil-section{flex-direction:column;gap:22px;margin-bottom:55px}.accueil-image{width:100%;min-height:190px}.accueil-intro{margin:15px 12px 45px;padding:42px 20px}.navigation-site{gap:7px 9px}.navigation-site a{font-size:12px;padding:8px}.banner{min-height:150px}main{padding:28px 0 50px} }
