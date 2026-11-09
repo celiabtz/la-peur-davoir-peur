@@ -3523,50 +3523,45 @@ body.dark-mode .carnet-finish {
 
 body.dark-mode .carnet-finish p {
     color: #f3e5ec;
-}
+}/* ===== CORRECTION VISIBILITÉ COMMENTAIRES ===== */
 
-/* ===== COMMENTAIRES : CONTRASTE CORRIGÉ ===== */
+/* ===== COMMENTAIRES : CONTRASTE ===== */
 
-/* Boutons J'aime et Signaler */
-body.dark-mode .post-actions button {
-    background: #F7DCE8 !important;
+.post-actions button {
+    background-color: #F7DCE8 !important;
     color: #493447 !important;
     opacity: 1 !important;
     border: none !important;
 }
 
-body.dark-mode .post-actions button * {
+.post-actions button span,
+.post-actions button i {
     color: #493447 !important;
-    opacity: 1 !important;
 }
 
-/* Compteur et textes des commentaires */
-body.dark-mode .compteur-commentaires,
-body.dark-mode .zone-commentaires,
-body.dark-mode .zone-commentaires p,
-body.dark-mode .commentaire,
-body.dark-mode .commentaire p,
-body.dark-mode .commentaire strong {
-    color: #F3E5EC !important;
+.post-actions span {
+    color: #FFFFFF !important;
 }
 
-/* Lien Voir les commentaires */
-body.dark-mode .zone-commentaires a,
-body.dark-mode .zone-commentaires .lien-commentaires,
-body.dark-mode .lien-commentaires {
+.zone-commentaires {
+    color: #FFFFFF !important;
+}
+
+.compteur-commentaires {
+    color: #FFFFFF !important;
+}
+
+.lien-commentaires {
     color: #F7C5DC !important;
     opacity: 1 !important;
 }
 
-/* Bouton Écrire un commentaire et actions */
-body.dark-mode .zone-commentaires button:not(.lien-commentaires),
-body.dark-mode #boutonEcrire {
+#boutonEcrire {
     background: #F7DCE8 !important;
     color: #493447 !important;
     opacity: 1 !important;
 }
 
-body.dark-mode .zone-commentaires button:not(.lien-commentaires) *,
-body.dark-mode #boutonEcrire * {
+#boutonEcrire * {
     color: #493447 !important;
 }
