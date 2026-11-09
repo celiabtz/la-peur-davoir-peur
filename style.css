@@ -3526,35 +3526,43 @@ body.dark-mode .carnet-finish p {
 }
 /* ===== CORRECTION VISIBILITÉ COMMENTAIRES ===== */
 
-.comment-actions button,
-.like-btn,
-.report-btn,
-.comment-btn {
-    background: #f7dce8 !important;
+/* ===== COMMENTAIRES : CONTRASTE ===== */
+
+.post-actions button {
+    background-color: #F7DCE8 !important;
+    color: #493447 !important;
+    opacity: 1 !important;
+    border: none !important;
+}
+
+.post-actions button span,
+.post-actions button i {
+    color: #493447 !important;
+}
+
+.post-actions span {
+    color: #FFFFFF !important;
+}
+
+.zone-commentaires {
+    color: #FFFFFF !important;
+}
+
+.compteur-commentaires {
+    color: #FFFFFF !important;
+}
+
+.lien-commentaires {
+    color: #F7C5DC !important;
+    opacity: 1 !important;
+}
+
+#boutonEcrire {
+    background: #F7DCE8 !important;
     color: #493447 !important;
     opacity: 1 !important;
 }
 
-.comment-actions button *,
-.like-btn *,
-.report-btn *,
-.comment-btn * {
+#boutonEcrire * {
     color: #493447 !important;
-    opacity: 1 !important;
-}
-
-.comment-count,
-.comments-title,
-.comment-count span {
-    color: #ffffff !important;
-}
-
-.view-comments,
-.show-comments {
-    color: #f7c5dc !important;
-    opacity: 1 !important;
-}
-
-.comment-card hr {
-    border-color: #b995ad;
 }
