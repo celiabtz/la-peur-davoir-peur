@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="carnet.css">
+    <link rel="icon" type="image/png" href="logo.png">
+
+<link rel="stylesheet" href="style.css">    
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Comprendre mes crises | La peur d'avoir peur</title>
@@ -25,16 +26,87 @@ body.dark-mode #book .ebook-page textarea { background: #281e2c !important; colo
 </style>
 </head>
 
-<body class="dark-mode">
+<body>
+
+
 
 <header class="header">
-    <nav>
-        <a href="index.html">Accueil</a>
-        <a href="histoire.html">Mon histoire</a>
-        <a href="solutions.html">Comprendre et avancer</a>
+    <div class="banner">
+
+        <div class="banner-flower flower-one">✿</div>
+        <div class="banner-flower flower-two">✿</div>
+        <div class="banner-flower flower-three">✿</div>
+        <div class="banner-flower flower-four">✿</div>
+
+        <div class="banner-content">
+            <div class="banner-signature">
+                <span></span>
+                LA PEUR D'AVOIR PEUR
+                <span></span>
+            </div>
+
+            <h1>Mon carnet</h1>
+
+            <p>
+                Un espace pour poser mes pensées et avancer à mon rythme.
+            </p>
+        </div>
+
+    </div>
+
+    <nav class="navigation-site">
+
+        <a href="index.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 10.5 12 3l9 7.5M5.5 9v12h13V9M9.5 21v-7h5v7"/>
+            </svg>
+            <span>Accueil</span>
+        </a>
+
+        <a href="histoire.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 6C9 3.5 5 3.5 2 5v15c3-1.5 7-1.5 10 1 3-2.5 7-2.5 10-1V5c-3-1.5-7-1.5-10 1Z"/>
+                <path d="M12 6v15"/>
+            </svg>
+            <span>Mon histoire</span>
+        </a>
+
+        <a href="solutions.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.8 8.8c0 5.5-8.8 11-8.8 11s-8.8-5.5-8.8-11A4.8 4.8 0 0 1 12 6.5a4.8 4.8 0 0 1 8.8 2.3Z"/>
+            </svg>
+            <span>Comprendre et avancer</span>
+        </a>
+
+        <a href="temoignages.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/>
+            </svg>
+            <span>Communauté</span>
+        </a>
+
+        <a href="questionnaire.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="5" y="3" width="14" height="18" rx="2"/>
+                <path d="M9 8h6 M9 12h6 M9 16h3"/>
+            </svg>
+            <span>QCM</span>
+        </a>
+
+        <a href="carnet.html" class="active">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v18H6.5A2.5 2.5 0 0 1 4 18.5z"/>
+                <path d="M4 5.5v13 M8 7h8 M8 11h8"/>
+            </svg>
+            <span>Carnet</span>
+        </a>
+<button type="button" id="theme-toggle">🌙 Mode nuit</button>
     </nav>
-    <button type="button" id="theme-toggle" aria-label="Changer de thème">☀️ Mode clair</button>
+  
 </header>
+
 
 <main class="carnet">
     <div id="book">
@@ -200,7 +272,38 @@ body.dark-mode #book .ebook-page textarea { background: #281e2c !important; colo
         <li><strong>15 ou 112</strong> : en cas de danger immédiat ou d'urgence médicale.</li>
     </ul>
     <p style="text-align:center;margin-top:55px;color:#89516f;">Avec douceur. Avec patience. ♡</p>
-</section>
+   <div class="confidentialite-carnet">
+    <h3>🌸 Ton carnet est ton espace personnel</h3>
+
+    <p>
+        Toutes les réponses que tu écris dans ce carnet sont privées.
+        Elles restent sur ton appareil et ne sont pas transmises à la créatrice de ce site.
+    </p>
+
+    <p>
+        Tu peux revenir dans ce carnet aussi souvent que tu le souhaites,
+        relire tes anciennes réponses, en écrire de nouvelles et observer
+        ton évolution au fil du temps.
+    </p>
+
+    <p>
+        Ne te mets aucune pression. Tu n'as pas besoin d'aller vite.
+        Chaque petit pas compte.
+    </p>
+
+
+</div>
+    <div class="carnet-finish">
+
+    <p>Tu es arrivé au bout de ce carnet. Bravo pour ce chemin parcouru. ♡</p>
+    <button type="button" id="terminerCarnetBtn">
+        Terminer mon carnet ♡
+        <button type="button" id="telechargerPDF" hidden>
+    Télécharger mon récapitulatif PDF ♡
+</button>
+    </button>
+    <p id="messageCarnet"></p>
+</div>
 </div>
 
 <div class="ebook-controls">
@@ -217,23 +320,183 @@ body.dark-mode #book .ebook-page textarea { background: #281e2c !important; colo
     <p>Un pas après l'autre. ♡</p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js"></script>
 <script>
-// Mode nuit par défaut, avec choix conservé
-const themeButton = document.getElementById('theme-toggle');
-const savedTheme = localStorage.getItem('carnet-theme');
-const darkEnabled = savedTheme !== 'light';
-document.body.classList.toggle('dark-mode', darkEnabled);
-function updateThemeButton() {
-    themeButton.textContent = document.body.classList.contains('dark-mode') ? '☀️ Mode clair' : '🌙 Mode nuit';
-}
-updateThemeButton();
-themeButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    localStorage.setItem('carnet-theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
-    updateThemeButton();
-});
 
 const pages = document.querySelectorAll('.ebook-page');
+// Sauvegarde privée du carnet sur l'appareil
+const CLE_CARNET = "mon-carnet-personnel";
+
+const champsCarnet = document.querySelectorAll(
+    ".ebook-page .exercise textarea"
+);
+
+let reponsesCarnet = {};
+
+try {
+    reponsesCarnet = JSON.parse(
+        localStorage.getItem(CLE_CARNET) || "{}"
+    );
+} catch {
+    reponsesCarnet = {};
+}
+
+// Restaurer les anciennes réponses
+champsCarnet.forEach((champ, index) => {
+    champ.value = reponsesCarnet[index] || "";
+
+    // Sauvegarder automatiquement chaque modification
+    champ.addEventListener("input", () => {
+        reponsesCarnet[index] = champ.value;
+
+        localStorage.setItem(
+            CLE_CARNET,
+            JSON.stringify(reponsesCarnet)
+        );
+    });
+});
+const boutonPDF = document.getElementById("telechargerPDF");
+
+boutonPDF.addEventListener("click", genererPDF);
+
+function genererPDF() {
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF();
+
+    const rose = [189, 102, 135];
+    const creme = [255, 249, 246];
+    const prune = [73, 55, 71];
+
+    // Couverture
+    pdf.setFillColor(...creme);
+    pdf.rect(0, 0, 210, 297, "F");
+
+    pdf.setTextColor(...rose);
+    pdf.setFont("helvetica", "normal");
+    pdf.setFontSize(35);
+    pdf.text("LA PEUR D'AVOIR PEUR", 105, 85, { align: "center" });
+
+    pdf.setTextColor(...prune);
+    pdf.setFont("helvetica", "bold");
+    pdf.setFontSize(27);
+    pdf.text("Mon carnet", 105, 125, { align: "center" });
+
+    pdf.setFont("helvetica", "normal");
+    pdf.setFontSize(15);
+    pdf.text("Mon chemin, mes pensées, mes progrès", 105, 140, { align: "center" });
+
+    pdf.setTextColor(...rose);
+    pdf.setFontSize(24);
+   pdf.setFont("helvetica", "normal");
+pdf.setFontSize(25);
+pdf.text("*  *  *", 105, 175, { align: "center" });
+
+    pdf.addPage();
+
+    let y = 25;
+
+    function nouvellePage() {
+        pdf.addPage();
+        pdf.setFillColor(...creme);
+        pdf.rect(0, 0, 210, 297, "F");
+        y = 25;
+    }
+
+    pdf.setFillColor(...creme);
+    pdf.rect(0, 0, 210, 297, "F");
+
+    document.querySelectorAll(".ebook-page .exercise").forEach(exercice => {
+        const titre = exercice.querySelector("h3");
+
+        if (y > 245) nouvellePage();
+
+        pdf.setFont("helvetica", "bold");
+        pdf.setFontSize(15);
+        pdf.setTextColor(...rose);
+
+        const titreLignes = pdf.splitTextToSize(titre?.textContent || "Mon exercice", 180);
+        pdf.text(titreLignes, 15, y);
+        y += titreLignes.length * 8 + 8;
+
+        exercice.querySelectorAll("textarea").forEach(champ => {
+            const question = champ.previousElementSibling?.textContent || "Ma réponse";
+            const lignesQuestion = pdf.splitTextToSize(question, 180);
+
+            if (y + 35 > 275) nouvellePage();
+
+            pdf.setFont("helvetica", "bold");
+            pdf.setFontSize(11);
+            pdf.setTextColor(...prune);
+            pdf.text(lignesQuestion, 15, y);
+
+            y += lignesQuestion.length * 6 + 3;
+
+            pdf.setFont("helvetica", "normal");
+            pdf.setFontSize(10);
+
+            const reponse = pdf.splitTextToSize(
+                champ.value.trim() || "Aucune réponse renseignée.",
+                170
+            );
+
+            const hauteur = Math.max(20, reponse.length * 6 + 10);
+
+            if (y + hauteur > 275) nouvellePage();
+
+            pdf.setDrawColor(...rose);
+            pdf.setFillColor(255, 255, 255);
+            pdf.roundedRect(15, y - 4, 180, hauteur, 3, 3, "FD");
+
+            pdf.setTextColor(...prune);
+            pdf.text(reponse, 20, y + 5);
+
+            y += hauteur + 10;
+        });
+
+        y += 8;
+    });
+
+    // Numéros de pages
+    const total = pdf.internal.getNumberOfPages();
+
+    for (let i = 2; i <= total; i++) {
+        pdf.setPage(i);
+        pdf.setFontSize(9);
+        pdf.setTextColor(...rose);
+        pdf.text("La peur d'avoir peur  •  " + (i - 1), 105, 287, {
+            align: "center"
+        });
+    }
+
+    pdf.save("Mon-carnet-personnel.pdf");
+}
+const SUPABASE_URL = "https://spxmcucihikawbxnlxhv.supabase.co";
+const SUPABASE_KEY = "sb_publishable_ubTxt0NBwRKmp3h4JounSw_uWCRAhQS";
+
+const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+const boutonTerminer = document.getElementById("terminerCarnetBtn");
+const messageCarnet = document.getElementById("messageCarnet");
+
+boutonTerminer.addEventListener("click", async () => {
+    boutonTerminer.disabled = true;
+    messageCarnet.textContent = "Enregistrement de ton passage...";
+
+    const { error } = await supabaseClient.rpc("incrementer_compteur_carnet");
+
+    if (error) {
+        messageCarnet.textContent = "Une erreur est survenue. Réessaie.";
+        boutonTerminer.disabled = false;
+        return;
+    }
+boutonPDF.hidden = false;
+    boutonTerminer.textContent = "Carnet terminé ♡";
+    messageCarnet.textContent = "Bravo pour ce chemin parcouru ! ♡";
+});
 let currentPage = 0;
 
 function showPage() {
@@ -256,6 +519,6 @@ function changePage(direction) {
 }
 showPage();
 </script>
-
+<script src="theme.js"></script>
 </body>
 </html>

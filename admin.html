@@ -2,12 +2,13 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <link rel="icon" type="image/png" href="logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administration | La peur d'avoir peur</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<script src="theme.js"></script>
+
 <body>
 
 <main class="admin-page">
@@ -23,6 +24,11 @@
     </section>
 
     <section id="gestion-admin" hidden>
+        <div class="statistique-carnet">
+    <h2>Mon carnet 🌸</h2>
+    <p>Nombre de personnes ayant terminé le carnet :</p>
+    <strong id="total-carnet">Chargement...</strong>
+</div>
         <h2>Publications</h2>
         <div id="publications-admin"></div>
 
@@ -73,6 +79,19 @@ document.getElementById("connexion-btn").addEventListener("click", async () => {
 });
 
 async function chargerAdministration() {
+        const compteur = document.getElementById("total-carnet");
+
+    const { data: stats, error: statsError } = await supabaseClient
+        .from("carnet_stats")
+        .select("total_utilisations")
+        .eq("id", 1)
+        .single();
+
+    if (statsError) {
+        compteur.textContent = "Impossible de charger le compteur";
+    } else {
+        compteur.textContent = stats.total_utilisations;
+    }
     const publications = document.getElementById("publications-admin");
     const signalements = document.getElementById("signalements-admin");
 
