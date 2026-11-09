@@ -3565,4 +3565,31 @@ body.dark-mode .carnet-finish p {
 
 #boutonEcrire * {
     color: #493447 !important;
+}/* ===== VISIBILITÉ DES COMMENTAIRES ===== */
+
+.interactions-commentaire button {
+    color: #493447 !important;
+    background: #F7DCE8 !important;
+    opacity: 1 !important;
+}
+
+.interactions-commentaire button * {
+    color: #493447 !important;
+    opacity: 1 !important;
+}
+
+.compteur-commentaires,
+.zone-commentaires,
+.commentaire {
+    color: #FFFFFF !important;
+}
+
+.lien-commentaires {
+    color: #F7C5DC !important;
+    opacity: 1 !important;
+}
+
+.zone-commentaires button {
+    color: #493447 !important;
+    opacity: 1 !important;
 }
