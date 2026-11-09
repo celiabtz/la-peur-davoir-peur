@@ -3524,3 +3524,37 @@ body.dark-mode .carnet-finish {
 body.dark-mode .carnet-finish p {
     color: #f3e5ec;
 }
+/* ===== CORRECTION VISIBILITÉ COMMENTAIRES ===== */
+
+.comment-actions button,
+.like-btn,
+.report-btn,
+.comment-btn {
+    background: #f7dce8 !important;
+    color: #493447 !important;
+    opacity: 1 !important;
+}
+
+.comment-actions button *,
+.like-btn *,
+.report-btn *,
+.comment-btn * {
+    color: #493447 !important;
+    opacity: 1 !important;
+}
+
+.comment-count,
+.comments-title,
+.comment-count span {
+    color: #ffffff !important;
+}
+
+.view-comments,
+.show-comments {
+    color: #f7c5dc !important;
+    opacity: 1 !important;
+}
+
+.comment-card hr {
+    border-color: #b995ad;
+}
