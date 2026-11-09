@@ -3696,4 +3696,29 @@ body.dark-mode .lien-commentaires {
         max-height: 16px !important;
         flex-basis: 16px !important;
     }
+}/* ===== CONTRASTE DES BOUTONS COMMUNAUTE EN MODE NUIT ===== */
+
+body.dark-mode .post-actions button,
+body.dark-mode .interactions-commentaire button,
+body.dark-mode .zone-commentaires button:not(.lien-commentaires) {
+    background: #F7DCE8 !important;
+    color: #493447 !important;
+    border: 1px solid #E9B9CE !important;
+    opacity: 1 !important;
+    font-weight: 600 !important;
+}
+
+/* Texte et icônes à l'intérieur des boutons */
+body.dark-mode .post-actions button *,
+body.dark-mode .interactions-commentaire button *,
+body.dark-mode .zone-commentaires button:not(.lien-commentaires) * {
+    color: #493447 !important;
+}
+
+/* Garder le lien Voir les commentaires discret */
+body.dark-mode .zone-commentaires .lien-commentaires {
+    background: transparent !important;
+    color: #F7C5DC !important;
+    border: none !important;
+    box-shadow: none !important;
 }
