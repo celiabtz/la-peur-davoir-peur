@@ -97,6 +97,19 @@ async function chargerAdministration() {
     } else {
         compteur.textContent = stats.total_utilisations;
     }
+    const compteurVisites = document.getElementById("total-visites");
+
+const { data: visites, error: visitesError } = await supabaseClient
+    .from("site_stats")
+    .select("total_visites")
+    .eq("id", 1)
+    .single();
+
+if (visitesError) {
+    compteurVisites.textContent = "Impossible de charger les visites";
+} else {
+    compteurVisites.textContent = visites.total_visites;
+}
     const publications = document.getElementById("publications-admin");
     const signalements = document.getElementById("signalements-admin");
 
