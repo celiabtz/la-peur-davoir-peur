@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="icon" type="image/png" href="logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration | La peur d'avoir peur</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="admin-page">
+    <h1>Administration ♡</h1>
+    <p>Gestion de la communauté</p>
+
+    <section id="connexion-admin">
+        <h2>Connexion administrateur</h2>
+        <input type="email" id="email-admin" placeholder="Adresse e-mail">
+        <input type="password" id="mdp-admin" placeholder="Mot de passe">
+        <button id="connexion-btn">Se connecter</button>
+        <p id="message-admin"></p>
+    </section>
+
+    <section id="gestion-admin" hidden>
+        <div class="statistique-carnet">
+    <h2>Mon carnet 🌸</h2>
+    <p>Nombre de personnes ayant terminé le carnet :</p>
+    <strong id="total-carnet">Chargement...</strong>
+</div>
+        <h2>Publications</h2>
+        <div id="publications-admin"></div>
+
+        <h2>Signalements</h2>
+        <div id="signalements-admin"></div>
+
+        <button id="deconnexion-btn">Se déconnecter</button>
+    </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL = "https://spxmcucihikawbxnlxhv.supabase.co";
+const SUPABASE_KEY = "sb_publishable_ubTxt0NBwRKmp3h4JounSw_uWCRAhQS";
+
+const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+const connexion = document.getElementById("connexion-admin");
+const gestion = document.getElementById("gestion-admin");
+const message = document.getElementById("message-admin");
+
+document.getElementById("connexion-btn").addEventListener("click", async () => {
+    const email = document.getElementById("email-admin").value.trim();
+    const password = document.getElementById("mdp-admin").value;
+
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
+        email,
+        password
+    });
+
+    if (error) {
+        message.textContent = "Connexion impossible : " + error.message;
+        return;
+    }
+
+    if (data.user.app_metadata?.role !== "admin") {
+        await supabaseClient.auth.signOut();
+        message.textContent = "Accès administrateur refusé.";
+        return;
+    }
+
+    connexion.hidden = true;
+    gestion.hidden = false;
+    await chargerAdministration();
+});
+
+async function chargerAdministration() {
+        const compteur = document.getElementById("total-carnet");
+
+    const { data: stats, error: statsError } = await supabaseClient
+        .from("carnet_stats")
+        .select("total_utilisations")
+        .eq("id", 1)
+        .single();
+
+    if (statsError) {
+        compteur.textContent = "Impossible de charger le compteur";
+    } else {
+        compteur.textContent = stats.total_utilisations;
+    }
+    const publications = document.getElementById("publications-admin");
+    const signalements = document.getElementById("signalements-admin");
+
+    publications.replaceChildren();
+    signalements.replaceChildren();
+
+    const { data: posts, error } = await supabaseClient
+        .from("temoignages")
+        .select("id, pseudonyme, titre, contenu, created_at")
+        .order("created_at", { ascending: false });
+
+    if (error) {
+        publications.textContent = "Erreur : " + error.message;
+        return;
+    }
+
+    posts.forEach(post => {
+        const bloc = document.createElement("article");
+        const titre = document.createElement("h3");
+        const texte = document.createElement("p");
+        const pseudo = document.createElement("strong");
+        const supprimer = document.createElement("button");
+
+        pseudo.textContent = post.pseudonyme;
+        titre.textContent = post.titre;
+        texte.textContent = post.contenu;
+        supprimer.textContent = "Supprimer";
+
+        supprimer.addEventListener("click", async () => {
+            if (!confirm("Supprimer définitivement cette publication ?")) return;
+
+            const { error } = await supabaseClient
+                .from("temoignages")
+                .delete()
+                .eq("id", post.id);
+
+            if (error) {
+                alert("Erreur : " + error.message);
+                return;
+            }
+
+            await chargerAdministration();
+        });
+
+        bloc.append(pseudo, titre, texte, supprimer);
+        publications.append(bloc);
+    });
+
+    const { data: reports, error: reportError } = await supabaseClient
+        .from("signalements")
+        .select("id, temoignage_id, motif, created_at")
+        .order("created_at", { ascending: false });
+
+    if (reportError) {
+        signalements.textContent = "Erreur : " + reportError.message;
+        return;
+    }
+
+    reports.forEach(report => {
+        const bloc = document.createElement("article");
+        const texte = document.createElement("p");
+        texte.textContent = "Publication : " + report.temoignage_id + " — Motif : " + report.motif;
+        bloc.append(texte);
+        signalements.append(bloc);
+    });
+}
+
+document.getElementById("deconnexion-btn").addEventListener("click", async () => {
+    await supabaseClient.auth.signOut();
+    gestion.hidden = true;
+    connexion.hidden = false;
+    document.getElementById("mdp-admin").value = "";
+});
+
+</script>
+<script src="theme.js"></script>
+</body>
+</html>
